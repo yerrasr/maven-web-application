@@ -20,7 +20,7 @@ stages{
 
   stage('CheckOutCode'){
     steps{
-    git branch: 'master', git credentialsId: 'GIT', url: 'https://github.com/yerrasr/maven-web-application.git'
+    git branch: 'master', credentialsId: 'GIT', url: 'https://github.com/yerrasr/maven-web-application.git'
 	
 	}
   }
