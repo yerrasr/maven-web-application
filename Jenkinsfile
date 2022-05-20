@@ -2,7 +2,11 @@ pipeline{
 
 agent any
 
+tools{
+maven 'maven3.8.2'
 
+}
+	
 triggers{
 pollSCM('* * * * *')
 }
@@ -19,6 +23,11 @@ stages{
     git branch: 'master', credentialsId: 'GIT', url: 'https://github.com/yerrasr/maven-web-application.git'
 	
 	}
+  }
+ stage('Build'){
+  steps{
+  sh  "mvn clean package"
+   }
   }
   
 }
